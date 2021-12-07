@@ -6,6 +6,7 @@ public class D {
 	{
 		System.out.println("iam D class");
 		
+		
 	}
 
 }
