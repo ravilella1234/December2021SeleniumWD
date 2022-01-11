@@ -3,6 +3,7 @@ package com.launchings;
 import java.io.FileInputStream;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -48,9 +49,9 @@ public class BaseTest
 			option.addArguments("--disable-notifications");
 			option.addArguments("--start-maximized");
 			//certificate errors handling
-			option.addArguments("--ignore-certificate-errors-spki-list");
+			//option.addArguments("--ignore-certificate-errors-spki-list");
 			//Proxy ip settings
-			option.addArguments("--proxy-server=https://192.168.10.1:9090");
+			//option.addArguments("--proxy-server=https://192.168.10.1:9090");
 			
 			driver = new ChromeDriver(option);
 		}
@@ -81,6 +82,21 @@ public class BaseTest
 	public static void navigateUrl(String url)
 	{
 		driver.get(childProp.getProperty(url));
+	}
+	
+	public static void clickElement(String locator) 
+	{
+		driver.findElement(By.xpath(locator)).click();
+	}
+
+	public static void typeText(String locator, String text)
+	{
+		driver.findElement(By.id(locator)).sendKeys(text);
+	}
+
+	public static void selectOption(String locator, String option) 
+	{
+		driver.findElement(By.id(locator)).sendKeys(option);
 	}
 
 }
