@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="BatchSuite">
+  <test thread-count="5" name="BatchTest">
+    <classes>
+      <class name="pack1.TNG_001"/>
+      <class name="pack1.TNG_002"/>
+      <class name="pack1.ClassDemo"/>
+    </classes>
+  </test> <!-- BatchTest -->
+</suite> <!-- BatchSuite -->
