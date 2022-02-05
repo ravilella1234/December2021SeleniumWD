@@ -5,21 +5,23 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.AfterMethod;
 
 public class TNG_001 extends BaseTest
 {
 	  
   @BeforeMethod
-  public void stratProcess() throws Exception 
+  @Parameters("browser")
+  public void stratProcess(String bType) throws Exception 
   {
 	  System.out.println("Before Method");
 	  	init();
 		test = rep.createTest("TC_004");
 		test.log(Status.INFO, "Init the properties files.....");
 		
-		launch("chromebrowser");
-		test.log(Status.PASS, "Launching the Browser :-" + p.getProperty("chromebrowser"));
+		launch(bType);
+		test.log(Status.PASS, "Launching the Browser :-" + bType);
 		 
 		navigateUrl("amazonurl");
 		test.log(Status.FAIL, "Navigated to Url : " + childProp.getProperty("amazonurl"));

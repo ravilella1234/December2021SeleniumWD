@@ -68,7 +68,7 @@ public class BaseTest
 	
 	public static void launch(String browser)
 	{
-		if(p.getProperty(browser).equals("chrome"))
+		if(browser.equals("chrome"))
 		{
 			 WebDriverManager.chromedriver().setup();
 			 
@@ -81,12 +81,12 @@ public class BaseTest
 			 
 			 driver = new ChromeDriver(option);
 		}
-		else if(p.getProperty(browser).equals("firefox"))
+		else if(browser.equals("firefox"))
 		{
 			 WebDriverManager.firefoxdriver().setup();
 			 
 			 ProfilesIni p = new ProfilesIni();
-			 FirefoxProfile profile = p.getProfile("DecemberFirefoxProfile");
+			 FirefoxProfile profile = p.getProfile("Jan2022FF");
 			
 			FirefoxOptions option = new FirefoxOptions();
 			option.setProfile(profile);
@@ -100,9 +100,9 @@ public class BaseTest
 			 
 			
 			//How to work with proxy settings
-			profile.setPreference("network.proxy.type", 1);
-			profile.setPreference("network.proxy.socks", "192.168.10.1");
-			profile.setPreference("network.proxy.socks_port", 1744);
+			//profile.setPreference("network.proxy.type", 1);
+			//profile.setPreference("network.proxy.socks", "192.168.10.1");
+			//profile.setPreference("network.proxy.socks_port", 1744);
 			
 			 driver = new FirefoxDriver(option);
 		}
