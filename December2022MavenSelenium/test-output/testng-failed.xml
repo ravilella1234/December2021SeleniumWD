@@ -1,37 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="FirefoxTest(failed)">
-    <parameter name="browser" value="firefox"/>
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pack1.RadioButton1">
+      <class name="pack1.TestDependency">
         <methods>
-          <include name="beforeMethod"/>
-          <include name="afterMethod"/>
-          <include name="radioButtonTest"/>
+          <include name="white"/>
+          <include name="blue"/>
+          <include name="orange"/>
+          <include name="green"/>
         </methods>
-      </class> <!-- pack1.RadioButton1 -->
-      <class name="pack1.LinksTesting1">
-        <methods>
-          <include name="linktesting1"/>
-          <include name="setup"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- pack1.LinksTesting1 -->
-      <class name="pack1.CheckBox1">
-        <methods>
-          <include name="checkboxTest"/>
-          <include name="afterMethod"/>
-          <include name="beforeMethod"/>
-        </methods>
-      </class> <!-- pack1.CheckBox1 -->
-      <class name="pack1.TNG_001">
-        <methods>
-          <include name="stratProcess"/>
-          <include name="amazon"/>
-          <include name="endProcess"/>
-        </methods>
-      </class> <!-- pack1.TNG_001 -->
+      </class> <!-- pack1.TestDependency -->
     </classes>
-  </test> <!-- FirefoxTest(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
