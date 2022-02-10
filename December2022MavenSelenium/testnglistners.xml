@@ -4,6 +4,7 @@
 
   <listeners>
  	<listener class-name="listners.TestNgListner"></listener>
+ 	<listener class-name="listners.RetryListener"></listener>
   </listeners>
 
   <test thread-count="5" name="Test">
